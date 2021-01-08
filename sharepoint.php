@@ -557,7 +557,7 @@ if (isset($_SESSION['token'])) {
 									echo '<div class="text-center">';
 									echo '<a class="btn btn-default load-more-link load-more-items" data-folderid="' . $cid . '" data-siteid="' . $sid . '" data-offset="' . count($documents['results']) . '" data-type="documents" href="' . $_SERVER['REQUEST_URI'] . '#">Load more items</a>';
 									echo '</div>';
-								} else if (count($items['results']) >= 50) {
+								} else if (isset($items) && count($items['results']) >= 50) {
 									echo '<div class="text-center">';
 									echo '<a class="btn btn-default load-more-link load-more-items" data-folderid="' . $cid . '" data-siteid="' . $sid . '" data-offset="' . count($items['results']) . '" data-type="items" href="' . $_SERVER['REQUEST_URI'] . '#">Load more items</a>';
 									echo '</div>';
