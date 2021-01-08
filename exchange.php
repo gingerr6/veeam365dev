@@ -315,7 +315,9 @@ if (isset($_SESSION['token'])) {
 					$owner = $veeam->getMailboxID($rid, $uid);
 					$folders = $veeam->getMailboxFolders($uid, $rid);
 					$parentfolders = array();
-					
+					echo '<pre>';
+print_r($folders['results']);
+echo '</pre>';
 					for ($i = 0; $i < count($folders['results']); $i++) {
 						if (empty($folders['results'][$i][_links][parent])) {
 							array_push($parentfolders, array('name' => $folders['results'][$i]['name'], 'id' => $folders['results'][$i]['id'], 'type' => $folders['results'][$i]['type']));
